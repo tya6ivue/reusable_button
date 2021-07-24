@@ -1,14 +1,12 @@
 <template>
   <div>
-    <button @click="upDateeee">Add data</button>
-
-    <h1>{{ data.name }} {{ data.lastName }}</h1>
+    <button class="button" @click="upDateeee">Primary</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "SecondaryComp",
+  name: "ChildComp",
   props: {
     data: {
       type: Object,
@@ -23,3 +21,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.button {
+  background-color: #0069d9;
+  color: #ffff;
+  border-radius: 5px;
+  width: 100px;
+}
+</style>
