@@ -1,35 +1,31 @@
 <template>
   <div>
-    <ul>
-      <li v-for="(value, index) in values" :key="index">
-        {{ value.brands }} {{ value.types }}
-      </li>
-    </ul>
-
-    <SecondaryComp :data="users" @upDate="upDate" />
-    <SecondaryComp :data="users" @upDate="upDate" />
+    <h1>{{ message }}</h1>
+    <SecondaryComp @upDate="ForColor" />
+    <br />
+    <SecondaryComp @upDate="ForReverse" />
   </div>
 </template>
 
 <script>
 import SecondaryComp from "./SecondaryComp.vue";
 export default {
-  name: "ParenComp",
+  name: "MainComp",
   components: {
     SecondaryComp,
   },
 
   data() {
     return {
-      users: { name: "nishant", lastName: "tyagi" },
-      values: [],
+      message: "Hello Vue.js!",
     };
   },
   methods: {
-    upDate() {
-      this.values.push({
-        brands: "coco-cola",
-      });
+    ForColor() {
+      alert("say hello");
+    },
+    ForReverse() {
+      this.message = this.message.split("").reverse().join("");
     },
   },
 };
